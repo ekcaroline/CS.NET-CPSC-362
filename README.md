@@ -6,3 +6,4 @@ Programming languages: HTML, CSS, JS, and SQL.
 Features:
 - Friend requests
 - Avatar creation (for anonymity) 
+- And more!
