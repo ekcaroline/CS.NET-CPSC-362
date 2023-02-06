@@ -1,0 +1,52 @@
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<style>
+body {
+    background-image: linear-gradient(to bottom,teal 0%, #0E9A50 100%);
+}
+  label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+  }
+  h {
+    color:#BFEDAB;
+    padding: 16px 32px;
+    font-size: 30px;
+    font-family: courier 'Courier New', Courier, monospace;
+  }
+  input[type=login] {
+  text-align: center;
+  width: 20%;
+  background-color: #8BED7C;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=login]:hover {
+  background-color: #7EC473;
+}
+</style>
+
+<html>
+  <h>
+    <center>
+      Welcome back!
+    </center>
+  </h>
+  <body>
+    <form>
+      <center>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" placeholder="Username..."><br>
+      <label for="pwd">Password:</label><br>
+      <input type="password" id="pwd" name="pwd" placeholder="Password..."><br>
+      <input type="login" value="Login">
+      </center>
+    </form>
+  </body>
+</html>
