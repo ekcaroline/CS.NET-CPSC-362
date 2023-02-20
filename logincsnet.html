@@ -18,16 +18,34 @@ body {
   width: 20%;
   background-color: #8BED7C;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 16px 32px;
+  margin: 4px 2px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-input[type=login]:hover {
-  background-color: #7EC473;
-}
+  a {
+    color: white; 
+    background-color: #54C880;
+    text-align: center;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width:10%;
+    height: auto;
+    top:0;
+    left:0;
+  }
+
+  a:hover, a:active {
+    background-color: #7EC473;
+  }
 </style>
 
 <html>
@@ -43,7 +61,7 @@ input[type=login]:hover {
       <input type="text" id="username" name="username" placeholder="Username..."><br>
       <label for="pwd">Password:</label><br>
       <input type="password" id="pwd" name="pwd" placeholder="Password..."><br>
-      <a  href="homepage.h">Login</a>
+      <a  href="homepage.html">Login</a>
       </center>
     </form>
   </body>
