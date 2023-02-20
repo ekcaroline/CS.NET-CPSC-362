@@ -1,6 +1,6 @@
 <style>
   body {
-    background-image: linear-gradient(to top,teal 0%, white 50%, #0E9A50 100%);
+    background-image: linear-gradient(to top,teal 0%, #5F9EA0 50%, #0E9A50 100%);
 }
   h {
     color:#BFEDAB;
@@ -8,30 +8,37 @@
     font-size: 30px;
     font-family: courier 'Courier New', Courier, monospace;
   }
-  input[type=submit] {
-  text-align: center;
-  width: 20%;
-  background-color: #8BED7C;
-  color: white;
-  padding: 10px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  a {
+    color: white; 
+    background-color: #54C880;
+    text-align: center;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 3px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width:10%;
+    height: auto;
+    top:0;
+    left:0;
+  }
 
-input[type=submit]:hover {
-  background-color: #7EC473;
-}
+  a:hover, a:active {
+    background-color: #7EC473;
+  }
   label {
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     color: white;
   }
 </style>
+<html>
     <h> 
       <center>
-         CS.NET
+         CS.NET Account Creation
       </center>
       </h>
 <body>
@@ -41,9 +48,14 @@ input[type=submit]:hover {
   <input type="text" id="fname" name="fname" placeholder= "First name..."><br>
   <label for="lname">Last name:</label><br>
   <input type="text" id="lname" name="lname" placeholder="Last name..."><br>
+      <label for="lname">Username:</label><br>
+  <input type="text" id="uname" name="uname" placeholder="Username..."><br>
+      <label for="pword">Password:</label><br>
+  <input type="text" id="pword" name="pword" placeholder="Password..."><br>
   <label for="age">Age:</label><br>
   <input type="text" id="age" name="age" placeholder= "Age..."><br>
-  <input type="submit" value="Submit">
+  <a  href="welcomepage.html"> Submit</a>
     </center>
 </form> 
 </body>
+</html>
