@@ -1,0 +1,5 @@
+To run the website locally:
+
+1. Download xampp, open and start Apache and MySQL
+2. Make sure the folder w/ files is in the xampp folder
+3. Go to browser and type http://localhost/website/index.php
