@@ -1,31 +1,11 @@
-<style>
-  h {
-    color:#BFEDAB;
-    font-family: Helvetica;
-    font-size: 300%;
-    position: static;
-    text-align: center;
-  }
-    body {
-    background-image: linear-gradient(to top,teal 0%, #0E9A50 100%);
-}
-a {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-a:hover, a:active {
-    background-color: #7EC473;
-  }
-</style>
-
-<h>
+// HTML Portion
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<title>
     Add your top 3 CS interests to your profile!
-</h>
+</title>
 
 <body>
   <form>
@@ -40,5 +20,6 @@ a:hover, a:active {
   <input type="checkbox" id="int5" name="int5" value="Artificial Intelligence">
   <label for="interest5"> Artificial Intelligence</label><br>
 </form>
-  <a  href="userpage.html"> Submit</a>
+  <a  href="userpage.php"> Submit</a>
 </body>
+</html>
