@@ -1,3 +1,65 @@
+button_style1:hover, button_style1:active {
+  background-color: #7EC473;
+}
+brand_title {
+  color: #BFEDAB;
+  font-family: Helvetica; 
+  font-size: 400%;
+  text-align: center;
+  position: static;
+  width: 50%;
+  gap: 30px;
+}
+reg_title {
+  color:#BFEDAB;
+  padding: 16px 32px;
+  font-size: 30px;
+  font-family: courier 'Courier New', Courier, monospace;
+}
 body {
-    background-image: linear-gradient(to top,teal 0%, white 50%, #0E9A50 100%);
+  background-image: linear-gradient(to bottom, teal 0%, #0E9A50 100%);
+  height: 100vh;
+} 
+label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: white;
+}
+page_style1 {
+  color: white;
+  background-color: #54C880;
+  border: none;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 50px;
+  height: auto;
+}
+a.button_style1 {
+  background-color: #54C880;
+  color: white; 
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  padding: 16px 32px;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 50%;
+  height: auto;
+  gap: 1000px;
+}
+whttxt {
+  position: fixed;
+  bottom: 0;
+  color: white;
+  text-align: center;
 }
