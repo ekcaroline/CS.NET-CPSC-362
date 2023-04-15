@@ -62,16 +62,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  // If there are no errors, insert user information into database
+  // If there are no errors, insert user information into database using prepared statement
   if (empty($fnameErr) && empty($lnameErr) && empty($unameErr) && empty($pwdErr) && empty($ageErr)) {
-    $sql = "INSERT INTO users (first_name, last_name, username, password, age) VALUES ('$fname', '$lname', '$uname', '$pwd', '$age')";
-    if (mysqli_query($conn, $sql)) {
+    // Prepare the SQL statement
+    $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, username, password, age) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssi", $fname, $lname, $uname, $pwd, $age); // Bind parameters to placeholders
+
+    if ($stmt->execute()) { // Execute the prepared statement
       $_SESSION['username'] = $uname;
+      $stmt->close();
       mysqli_close($conn);
       header("Location: welcomepage.php");
       exit();
-    } else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
   }
 }
@@ -109,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <label for="age">Age:</label><br>
       <input type="text" id="age" name="age" placeholder="Age..."><br>
       <span class="error"><?php echo $ageErr; ?></span><br>
-      <button type="submit" id="submit-btn" value="Submit"></button>
+      <button type="submit">Submit</button>
     </center>
 </form> 
 </body>
