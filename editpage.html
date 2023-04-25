@@ -1,0 +1,143 @@
+<style>
+  body {
+    background-image: linear-gradient(to top, teal 0%, #5F9EA0 50%, #0E9A50 100%);
+  }
+
+  h {
+    color: #BFEDAB;
+    padding: 16px 32px;
+    font-size: 30px;
+    font-family: courier 'Courier New', Courier, monospace;
+  }
+
+  a {
+    color: white;
+    background-color: #54C880;
+    text-align: center;
+    padding: 16px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 3px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 10%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+
+  a:hover,
+  a:active {
+    background-color: #7EC473;
+  }
+
+  label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+  }
+</style>
+<!--------------Main Information--------->
+<html>
+<h>
+  <center>
+    CS.NET Edit Profile
+  </center>
+</h>
+
+<body>
+  <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" placeholder="First name..."><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" placeholder="Last name..."><br>
+    <label for="lname">Username:</label><br>
+    <input type="text" id="uname" name="uname" placeholder="Username..."><br>
+    <label for="pwd">Password:</label><br>
+    <input type="text" id="pwd" name="pwd" placeholder="Password..."><br>
+    <label for="age">Age:</label><br>
+    <input type="text" id="age" name="age" placeholder="Age...">
+
+    <!--------Profile Edit---->
+    <script src="script.js"> </script>
+    <div class="profile-pic">
+      <label class="-label" for="file">
+        <span class="glyphicon glyphicon-camera"></span>
+        <br><br>
+        <span style="color:#BFEDAB;font-size:30px;"> Change profile picture </span>
+        <br><br>
+        <img style="text-align: left;"
+          src="https://img.mensxp.com/media/content/2018/Sep/powerlifters-who-can-beat-bodybuilders-in-aesthetics-740x500-1-1537273242.jpg"
+          id="output" width="200" />
+        <br> <br>
+      </label>
+      <input id="file" type="file" onchange="loadFile(event)" />
+    </div>
+
+
+    <p style="color:#BFEDAB;font-size:20px;">
+      INTERESTS
+    </p>
+
+    <body>
+    <label style="color: white; font-size: 15px; font-family: Helvetica;" for="interest">Interest</label>
+<select name="interest" id="interest">
+  <option value="">Select an interest</option>
+    <option value="int1">Software Engineering</option>
+    <option value="int2">Game Development</option>
+    <option value="int3">Cybersecurity</option>
+    <option value="int4">Systems and Networking</option>
+    <option value="int5">Artificial Intelligence</option>
+    <option value="int6">Web Development</option>
+</select>
+
+      <br><br>
+      <p style="color:#BFEDAB;font-size:20px;">LOCATION</p>
+
+<form>
+        <label style="color: white; font-size: 15px; font-family: Helvetica;" for="city">City</label>
+        <select name="city" id="city">
+          <optgroup label="Southern California">
+            <option value="SD">San Diego</option>
+            <option value="FUL">Fullerton</option>
+            <option value="SA">Santa Ana</option>
+            <option value="CO">Corona</option>
+            <option value="IRV">Irvine</option>
+            <option value="LAGB">Laguna Beach</option>
+          </optgroup>
+          <optgroup label="Central California">
+            <option value="FRE">Fresno</option>
+            <option value="SANBAR">Santa Barbara</option>
+            <option value="Stockton">Stockton</option>
+          </optgroup>
+          <optgroup label="Northern California">
+            <option value="SANF">San Francisco</option>
+            <option value="SANCR">Santa Cruz</option>
+            <option value="NAPA">Napa</option>
+          </optgroup>
+          <optgroup label="Others">
+            <option value="OOS">Out-of-State</option>
+          </optgroup>
+        </select>
+  <form/>
+        <br><br>
+    
+
+        <p2 style="color:#BFEDAB;font-size:20px;">
+          SOCIALS
+        </p2>
+        <br><br>
+
+        <label style="color: white; font-size: 15px; font-family: Helvetica;" for="linktree">Linktree:</label><br>
+        <input style="font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;color: black;" type="linktree" id="social" name="social" placeholder="Linktree link..."><br>
+
+        <br><br>
+        <a type="submit"; href="homepage.html">Save Changes</a>
+    </body>
+  </form>
+</body>
+
+</html>
