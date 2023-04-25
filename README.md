@@ -12,7 +12,7 @@ Project Requirements:
 - Add social media links through linktree
 
 FUNCTIONAL ->
-- Matchmaking feature
+- (MAYBE)Matchmaking feature
 - Display a list of people with mutual interests
 - Display social media links 
 
