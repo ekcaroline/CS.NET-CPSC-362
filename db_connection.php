@@ -6,12 +6,8 @@ $dbname = "users";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-if ($conn) {
-    echo "Connection successful";
-}
+    if($conn->connect_error) {
+        die("Connection failed: " . $db->connect_error);  
+    }
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-    echo "Connection Failed";
-}
 ?>
