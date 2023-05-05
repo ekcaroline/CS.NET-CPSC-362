@@ -24,6 +24,8 @@
 - Will utilize HTML, CSS, JavaScript, and PHP for the website features and MySQL for the database
 - Developed on Replit which runs on a LINUX environment
 
+---
+
 # Running the Project
 1. Download Xampp from the official site, as well as this project rep. For Xampp install the Apache and MySQL modules. 
    Unzip the project if you downloaded as a zip .
