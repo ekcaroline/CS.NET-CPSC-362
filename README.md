@@ -33,3 +33,5 @@
    Import the users.sql frienships.sql into a new database named **users**. We are now ready to boot up the site
 3. In a new tab, type `localhost/CS.NET-CPSC-362-main`. This should take you to the index.php page
    You are now at the site and can login or create an account. Feel free to play around!
+   
+   ![pog](https://media.tenor.com/EM9F4YsYvdMAAAAC/pogchamp-blow.gif)
