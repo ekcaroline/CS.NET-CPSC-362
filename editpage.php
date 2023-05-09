@@ -115,10 +115,10 @@ if (isset($_POST["socials"])) {
       // Socials is not being updated, so keep the original value
       $socials = $original_socials;
   }
-  } else {
-    // Socials is not being updated, so keep the original value
-    $socials = $original_socials;
-  }
+} else {
+  // Socials is not being updated, so keep the original value
+  $socials = $original_socials;
+}
   // Check if an image file was uploaded
   if (isset($_FILES['image_file']) && $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
 
@@ -143,7 +143,7 @@ if (isset($_POST["socials"])) {
   }
   header("Location: userpage.php");
   exit();
-  }
+}
 ?>
 <!---------Style--------->
 <style>
@@ -198,8 +198,10 @@ if (isset($_POST["socials"])) {
   </h>
 
   <body>
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
       <center>
+      <input type="file" name="image_file"><br>
+
       <label for="fname">First name :</label><br>
       <input type="text" id="fname" name="fname" placeholder="First name..."><br>
       <span class="error"><?php echo $fnameErr; ?></span><br>
@@ -260,7 +262,7 @@ if (isset($_POST["socials"])) {
       <span class="error"><?php echo $socErr; ?></span><br>
 
       <br><br>
-      <button type="submit" class="a">Change</button>
+      <button type="submit" class="a">Update</button>
       <button type="button" class="a" onclick="window.location.href='userpage.php'">Cancel</button>
     </center>
 </form> 
