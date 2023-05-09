@@ -99,7 +99,7 @@ if(!isset($_SESSION['username'])){
     if(isset($_SESSION['username'])){
       $uname = $_SESSION['username'];
       // Fetch the name from the database
-      $stmt = $conn->prepare("SELECT first_name, last_name, age, interest, city, socials, pfp FROM users WHERE username = ?");
+      $stmt = $conn->prepare("SELECT id, first_name, last_name, age, interest, city, socials, pfp FROM users WHERE username = ?");
       $stmt->bind_param("s", $uname);
       $stmt->execute();
       $result = $stmt->get_result();
@@ -112,6 +112,7 @@ if(!isset($_SESSION['username'])){
         $city = $row['city'];
         $socials = $row['socials'];
         $pfp = $row['pfp'];
+        $id = $row['id'];
         echo '<h1 class="w3-jumbo"><span class="w3-hide-small"></span> '.$fname.' '.$lname.'</h1>';
         echo '<p>CSUF Student</p>';
       }
@@ -187,10 +188,9 @@ if(!isset($_SESSION['username'])){
   <?php
   // Fetch friends from the database
   $user_interests = array();
-  $stmt = $conn->prepare("SELECT u.id, u.first_name, u.last_name, u.interest, u.pfp FROM users u INNER JOIN friendships f ON u.id = f.friend_id OR u.id = f.user1_id WHERE (f.user1_id = ? OR f.friend_id = ?) AND u.id != ?");
-
-  $stmt->bind_param("iii", $user_id, $user_id, $user_id);
   $user_id = $_SESSION['user_id'];
+  $stmt = $conn->prepare("SELECT u.id, u.first_name, u.last_name, u.interest FROM users u INNER JOIN friendships f ON u.id = f.friend_id OR u.id = f.user1_id WHERE (f.user1_id = ? OR f.friend_id = ?) AND u.id != ?");
+  $stmt->bind_param("iii", $user_id, $user_id, $user_id);
   $stmt->execute();
   $result = $stmt->get_result();
 
@@ -200,19 +200,11 @@ if(!isset($_SESSION['username'])){
     // Output each friend
     $fname = $row['first_name'];
     $lname = $row['last_name'];
-    $pfp = $row['pfp'];
     $interests = explode(',', $row['interest']); // Split interests into an array
     $user_interests = explode(",", $interest);
     $common_interests = array_intersect($interests, $user_interests); // Find common interests
     echo '<li style="display: flex; align-items: center; margin-bottom: 10px;">';
-    if (!empty($pfp)) {
-      // Profile picture is not empty, display it
-      $pfp_data_uri = "data:image/png;base64," . base64_encode($pfp);
-      echo '<img src="'.$pfp_data_uri.'" alt="Friend avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">';
-    } else {
-      // Profile picture is empty, display default photo
-      echo '<img src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="Default avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">';
-    }
+    echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrTgakuIRni6vVnJ5hEHlH6hGFPaoG6FFbTQ&usqp=CAU" alt="Friend avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">';
     echo '<p style="font-color: darkgreen; font-size: 18px; margin: 0;">'.$fname.' '.$lname."\n".' Common Interests: ';
     if (!empty($common_interests)) {
       echo rtrim(implode(', ', $common_interests), ', ');
@@ -231,7 +223,7 @@ if(!isset($_SESSION['username'])){
     <?php
       // Fetch friend suggestions from the database
       $user_interests = array();
-      $stmt = $conn->prepare("SELECT u.id, u.first_name, u.last_name, u.interest, u.pfp FROM users u LEFT JOIN friendships f ON (u.id = f.friend_id OR u.id = f.user1_id) AND (f.user1_id = ? OR f.friend_id = ?) WHERE u.id != ? AND f.user1_id IS NULL");
+      $stmt = $conn->prepare("SELECT u.id, u.first_name, u.last_name, u.interest FROM users u LEFT JOIN friendships f ON (u.id = f.friend_id OR u.id = f.user1_id) AND (f.user1_id = ? OR f.friend_id = ?) WHERE u.id != ? AND f.user1_id IS NULL");
 
       $stmt->bind_param("iii", $user_id, $user_id, $user_id);
       $user_id = $_SESSION['user_id'];
@@ -241,13 +233,11 @@ if(!isset($_SESSION['username'])){
         // Output each friend suggestion
         $fname = $row['first_name'];
         $lname = $row['last_name'];
-        $pfp = $row['pfp'];
         $interests = explode(',', $row['interest']); // Split interests into an array
         $user_interests = explode(",", $interest);
         $common_interests = array_intersect($interests, $user_interests); // Find common interests
         echo '<li style="display: flex; align-items: center; margin-bottom: 10px;">';
-        $pfp_data_uri = "data:image/png;base64," . base64_encode($pfp);
-        echo '<img src="'.$pfp_data_uri.'" alt="Friend avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">';
+        echo '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrTgakuIRni6vVnJ5hEHlH6hGFPaoG6FFbTQ&usqp=CAU" alt="Friend avatar" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">';
         echo '<p style="font-color: darkgreen; font-size: 18px; margin: 0;">'.$fname.' '.$lname."\n".' Common Interests: ';
         if (!empty($common_interests)) {
           echo rtrim(implode(', ', $common_interests), ', ');
