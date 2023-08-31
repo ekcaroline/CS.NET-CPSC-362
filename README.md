@@ -12,6 +12,8 @@ This program is designed to help students network with one another. It includes 
 2. Navigate through the login, account creation, and profile editing pages.
 3. Send connection requests to other users.
 
+
+------------------------
 Project Requirements:
 
  USER will be able to ->
