@@ -1,6 +1,6 @@
 # Developers: Caroline Ek and David Nguyen
 
-##Project Name: CS.NET
+## Project Name: CS.NET
 
 ### Student Networking Program
 
